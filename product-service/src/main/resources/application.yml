@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: "product"
+  datasource:
+    url: "jdbc:oracle:thin:@//localhost:1521/product"
+    username: "admin"
+    password: "admin_password"
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    database-platform: org.hibernate.dialect.OracleDialect
+server:
+  port: 8280
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka"
